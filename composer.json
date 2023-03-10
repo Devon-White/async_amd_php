@@ -1,0 +1,6 @@
+{
+    "require": {
+        "signalwire-community/signalwire": "^3.0",
+        "guzzlehttp/guzzle": "7.5.0"
+    }
+}
