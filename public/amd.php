@@ -5,9 +5,9 @@ use SignalWire\Rest\Client;
 
 require '../vendor/autoload.php';
 
-$projectid = "b08dacad-2f6c-4de1-93d6-cc732e0c69c5";
-$auth_token = "PT16d2254f1cf1be0766881a2043afe8ef9e2fc8e8f739750b";
-$space_url = "devspace.signalwire.com";
+$projectid = "Project ID Here";
+$auth_token = "Auth Token Here";
+$space_url = "example.signalwire.com";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $client = new Client($projectid, $auth_token, array("signalwireSpaceUrl" => $space_url));
