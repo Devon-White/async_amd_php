@@ -77,7 +77,7 @@ Both files can be found in the `public` folder
 
 
 <h3>Machine Xml Logic</h3>
-```xml
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
     <Say>What is A Machine for 0 points</Say>
