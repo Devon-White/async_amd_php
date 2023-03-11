@@ -8,8 +8,7 @@ $dotenv->load();
 
 function get_info(): array
 {
-
-
+    // Reads .env file and returns values
     $projectid = $_ENV['PROJECT_ID'];
     $auth_token = $_ENV['AUTH_TOKEN'];
     $space_url = $_ENV['SPACE_URL'];
@@ -29,6 +28,7 @@ function get_info(): array
 
 function get_ngrok_url() : array
 {
+    // Makes a request to ngrok to get a list of active running tunnels
     $auth = $_ENV['NGROK_API_TOKEN'];
     $client = new guzzle();
     $headers = [
@@ -50,6 +50,7 @@ function get_ngrok_url() : array
 
 function check_ngrok_url(): void
 {
+    // Checks to see if active ngrok tunnel url matches tunnel url in .env file
     $url = $_ENV['URL'];
     if ($url != get_ngrok_url()['url']) {
 
@@ -66,6 +67,7 @@ function check_ngrok_url(): void
 
 function get_sw_client(): Client
 {
+    // Creates a new SW client then returns it
     $projectid = $_ENV['PROJECT_ID'];
     $auth_token = $_ENV['AUTH_TOKEN'];
     $space_url = $_ENV['SPACE_URL'];
