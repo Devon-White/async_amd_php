@@ -86,7 +86,8 @@ Both files can be found in the `public` folder
 ```
 
 
-<h3>AMD Settings</h3>
+
+<h2>AMD Settings</h2>
 AMD settings can be adjusted in the `create_call.php` file `lines 21 to 27`
 
 ````php
