@@ -22,7 +22,7 @@ AUTH_TOKEN='SignalWire Auth Token'
 
 SPACE_URL='SignalWire Space Url - Example: example.signalwire.com'
 
-URL='ngrok tunnel - Will automatically be set/update if a tunnel is running and api token is provided'
+URL='ngrok tunnel - Will automatically be set/updated if a tunnel is running and a valid ngrok api token is provided'
 
 NGROK_API_TOKEN='ngrok api token'
 ```
@@ -31,6 +31,7 @@ NGROK_API_TOKEN='ngrok api token'
 `check_ngrok_url` function on `line 7` in the `create_call.php` file if you plan on 
 doing this!
 
+Example:
 ````php
 <?php
 
@@ -55,7 +56,9 @@ $url = $payload['url'];
 
 `ngrok http 8080`
 
-<li>Run the create_call.php script</li>
+<li>Run the script</li> 
+
+`create_call.php`
 
 <li>Answer call</li>
 </ol>
@@ -65,7 +68,7 @@ Once determined if the callee is a `human`, it will update the call with the `hu
 otherwise it will update with the `Machine.xml`document.
 Both files can be found in the `public` folder
 
-<h3>Human Xml Logic</h3>
+<h3>Human Xml</h3>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -75,7 +78,7 @@ Both files can be found in the `public` folder
 </Response>
 ```
 
-<h3>Machine Xml Logic</h3>
+<h3>Machine/Unknown Xml</h3>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
