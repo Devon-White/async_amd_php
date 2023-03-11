@@ -11,7 +11,7 @@
 
 <h4>.env File Setup</h3>
 
-````shell
+```dotenv
 TO_NUM='Number you wish to call'
 
 FROM_NUM='Number you will be calling from'
@@ -25,7 +25,7 @@ SPACE_URL='SignalWire Space Url - Example: example.signalwire.com'
 URL='ngrok tunnel - Will automatically be set/update if a tunnel is running and api token is provided'
 
 NGROK_API_TOKEN='ngrok api token'
-````
+```
 
 `NGROK_API_TOKEN` can be left blank if you plan on using your own web server or if you prefer to hard set the ngrok tunnel in `URL`. Make sure to also comment out the
 `check_ngrok_url` function on `line 7` in the `create_call.php` file if you plan on 
