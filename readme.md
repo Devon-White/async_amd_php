@@ -11,7 +11,7 @@
 
 <h4>.env File Setup</h3>
 
-```dotenv
+```shell
 TO_NUM='Number you wish to call'
 
 FROM_NUM='Number you will be calling from'
