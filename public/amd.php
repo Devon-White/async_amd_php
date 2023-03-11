@@ -1,37 +1,38 @@
 <?php
-use SignalWire\Rest\Client;
-
-
 
 require '../vendor/autoload.php';
 
-$projectid = "Project ID Here";
-$auth_token = "Auth Token Here";
-$space_url = "example.signalwire.com";
+require '../function.php';
+
+
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $client = new Client($projectid, $auth_token, array("signalwireSpaceUrl" => $space_url));
+    $payload = get_info();
+    $to_num = $payload['to_num'];
+    $from_num = $payload['from_num'];
+    $url = $payload['url'];
+
     // Get the form data
     $sid = $_REQUEST['CallSid'];
     $answered_by = $_REQUEST['AnsweredBy'];
 
-
+    $client = get_sw_client();
     if ($answered_by == "human") {
         // Update call with new instructions
         $call = $client->calls($sid)
             ->update([
                     "method" => "POST",
-                    "url" => "https://devspace.signalwire.com/laml-bins/73336917-6cd8-4df4-ae58-b13904271c2a"
+                    "url" => "$url/human.xml"
 
             ]);
     }
-    if ($answered_by == "machine_start") {
+    else {
         $call = $client->calls($sid)
             ->update([
                     "method" => "POST",
-                    "url" => "https://devspace.signalwire.com/laml-bins/dd5b11ae-cd46-4ae8-90df-632ac68afb98"
+                    "url" => "$url/Machine.xml"
 
             ]);
-    }
-}
+        }}
 ?>
