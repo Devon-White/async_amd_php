@@ -14,8 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $url = $payload['url'];
 
     // Get the form data
+
     $sid = $_REQUEST['CallSid'];
     $answered_by = $_REQUEST['AnsweredBy'];
+    echo $answered_by;
 
     $client = get_sw_client();
     if ($answered_by == "human") {

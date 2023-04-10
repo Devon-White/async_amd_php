@@ -21,10 +21,10 @@ $call = $client->calls
             "url" => "$url/play.xml",
             "MachineDetection" => "DetectMessageEnd",
             "MachineDetectionTimeout" => 30,
-            "MachineDetectionSilenceTimeout" => 10000,
             "Method" => "POST",
             "AsyncAmd" => "true",
             "AsyncAmdStatusCallback" => "$url/amd.php",
+            "MachineDetectionSpeechEndThreshold" => 2500
             )
     );
 
